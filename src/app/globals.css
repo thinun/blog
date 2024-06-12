@@ -2,3 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --bg:#0d0c22;
+    --bgSoft:#2d2b42;
+    --textSoft:#e5e5e5;
+    --text:white;
+    --btn:#3673fd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+
+}

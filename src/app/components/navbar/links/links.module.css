@@ -1,0 +1,72 @@
+.desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 120px;
+    height: 40px;
+    margin: 3px;
+    font-size: 12px;
+}
+
+.li:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px white;
+
+}
+
+.mobile {
+    display: none;
+}
+
+.active {
+    background-color: var(--btn);
+}
+
+.navButton {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: purple;
+        width: 200px;
+        bottom: 0;
+
+    }
+
+    .navButton {
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        display: block;
+        width: 100px;
+        height: 40px;
+        color: white;
+        background-color: var(--btn);
+        z-index: 10;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+}
+
