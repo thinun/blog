@@ -1,0 +1,20 @@
+.hero-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 85vh;
+}
+.hero-button{
+    width: 150px;
+    height: 40px;
+    background-color: var(--btn);
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 60px 20px 20px;
+}
+
+.hero-button:hover {
+    background-color: white;
+    color: black;
+}

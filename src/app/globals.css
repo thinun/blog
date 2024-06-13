@@ -19,8 +19,8 @@
 body{
     background-color: var(--bg);
     color: var(--text);
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
     margin-top: 20px;
 
 }
