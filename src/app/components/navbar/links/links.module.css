@@ -21,11 +21,25 @@
     background-color: white;
     color: black;
     box-shadow: 0 0 10px white;
-
 }
 
 .mobile {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: var(--bgSoft);
+    width: 200px;
+    bottom: 0;
+    transition: right 0.5s ease;
+}
+
+.mobile.active {
+    right: 0;
 }
 
 .active {
@@ -37,19 +51,8 @@
 }
 
 @media (max-width: 768px) {
-    .mobile {
-        position: fixed;
-        top: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        background-color: purple;
-        width: 200px;
-        bottom: 0;
-
+    .mobile.active {
+        background-color: var(--bgSoft);
     }
 
     .navButton {
@@ -67,6 +70,4 @@
     .desktop {
         display: none;
     }
-
 }
-

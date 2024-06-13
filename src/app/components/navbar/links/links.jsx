@@ -1,15 +1,14 @@
-'use client'
+'use client';
 import Link from "next/link";
-import styles from './links.module.css'
-import {usePathname} from "next/navigation";
-import {useState} from "react";
+import styles from './links.module.css';
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const Links = () => {
-    const pathName = usePathname()
-    const [navMenu, setNavMenu] = useState(true)
-    // temporary
-    const session = true
-    const admin = true
+    const pathName = usePathname();
+    const [navMenu, setNavMenu] = useState(false);
+    const session = true;
+    const admin = true;
 
     const linksNavbar = [
         {
@@ -34,72 +33,66 @@ const Links = () => {
         <>
             <ul className={styles.desktop}>
                 {linksNavbar.map(link => (
-
-                    <Link href={link.path}
-                          key={link.title}
-                          className={`${pathName === link.path ? styles.active : ''} ${styles.li}`}>
+                    <Link href={link.path} key={link.title} className={`${pathName === link.path ? styles.active : ''} ${styles.li}`}>
                         <li>
                             {link.title}
                         </li>
                     </Link>
-
                 ))}
-                {admin ?
+                {admin && (
                     <Link href={'/pages/admin'}>
                         <li className={`${pathName === '/pages/admin' ? styles.active : ''} ${styles.li}`}>
                             Admin
                         </li>
-                    </Link> : ''}
-                {session ?
+                    </Link>
+                )}
+                {session ? (
                     <Link href={'/pages/login'}>
                         <button className={`${pathName === '/pages/login' ? styles.active : ''} ${styles.li}`}>
                             Log Out
                         </button>
-                    </Link> :
+                    </Link>
+                ) : (
                     <Link href={'/pages/login'}>
                         <button className={`${pathName === '/pages/login' ? styles.active : ''} ${styles.li}`}>
                             Log In
                         </button>
-                    </Link>}
+                    </Link>
+                )}
             </ul>
 
-            <button className={styles.navButton}
-                    onClick={() => setNavMenu(prevState => !prevState)}>
+            <button className={styles.navButton} onClick={() => setNavMenu(prevState => !prevState)}>
                 Nav Menu
             </button>
-            {navMenu && (
-                <ul className={styles.mobile}>
-                    {linksNavbar.map(link => (
-
-                        <Link href={link.path} key={link.title}
-                              className={`${pathName === link.path ? styles.active : ''} ${styles.li}`}>
-                            <li>
-                                {link.title}
-                            </li>
-                        </Link>
-
-                    ))}
-                    {admin ?
-                        <Link href={'/pages/admin'}>
-                            <li className={`${pathName === '/pages/admin' ? styles.active : ''} ${styles.li}`}>
-                                Admin
-                            </li>
-                        </Link> : ''}
-                    {session ?
-                        <Link href={'/pages/login'}>
-                            <button
-                                className={`${pathName === '/pages/login' ? styles.active : ''} ${styles.li}`}>
-                                Log Out
-                            </button>
-                        </Link> :
-                        <Link href={'/pages/login'}>
-                            <button
-                                className={`${pathName === '/pages/login' ? styles.active : ''} ${styles.li}`}>
-                                Log In
-                            </button>
-                        </Link>}
-                </ul>
-            )}
+            <ul className={`${styles.mobile} ${navMenu ? styles.active : ''}`}>
+                {linksNavbar.map(link => (
+                    <Link href={link.path} key={link.title} className={`${pathName === link.path ? styles.active : ''} ${styles.li}`}>
+                        <li>
+                            {link.title}
+                        </li>
+                    </Link>
+                ))}
+                {admin && (
+                    <Link href={'/pages/admin'}>
+                        <li className={`${pathName === '/pages/admin' ? styles.active : ''} ${styles.li}`}>
+                            Admin
+                        </li>
+                    </Link>
+                )}
+                {session ? (
+                    <Link href={'/pages/login'}>
+                        <button className={`${pathName === '/pages/login' ? styles.active : ''} ${styles.li}`}>
+                            Log Out
+                        </button>
+                    </Link>
+                ) : (
+                    <Link href={'/pages/login'}>
+                        <button className={`${pathName === '/pages/login' ? styles.active : ''} ${styles.li}`}>
+                            Log In
+                        </button>
+                    </Link>
+                )}
+            </ul>
         </>
     );
 };
