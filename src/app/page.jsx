@@ -1,8 +1,18 @@
+"use client"
 import Image from "next/image";
 import './home.css'
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 export default function Home() {
+    const router = useRouter()
+    const handleLearnMoreButton = () => {
+        router.push("/pages/about");
+    }
+
+    const handleContactButton = () => {
+        router.push("/pages/contact");
+    }
     return <>
         <div className={'hero-section flex'}>
             <div className={'hero-left flex flex-col items-center w-1/2'}>
@@ -14,13 +24,8 @@ export default function Home() {
                     unforgettable experiences. Click "Get Started" and let your Sri Lankan adventure begin!
                 </p>
                 <div className={'flex flex-row items-center'}>
-                    <Link href={'/pages/about'}>
-                        <button className={'hero-button'}>Learn More</button>
-                    </Link>
-
-                    <Link href={'/pages/contact'}>
-                        <button className={'hero-button'}>Contact</button>
-                    </Link>
+                    <button className={'hero-button'} onClick={handleLearnMoreButton}>Learn More</button>
+                    <button className={'hero-button'} onClick={handleContactButton}>Contact</button>
 
                 </div>
             </div>
