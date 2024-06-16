@@ -1,3 +1,7 @@
 .about-title{
     color: var(--btn);
 }
+
+.about-container{
+    height: 85vh;
+}

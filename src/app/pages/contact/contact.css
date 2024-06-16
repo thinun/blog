@@ -1,0 +1,21 @@
+.form-input{
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    color: #0d0c22;
+    border: 1px solid;
+    border-color: var(--btn);
+}
+
+.form-input:focus{
+    outline-color: var(--btn);
+}
+.contact-container{
+    height: 85vh;
+}
+.form-btn{
+    width: 100%;
+    height: 40px;
+    background-color: var(--btn);
+    border-radius: 6px;
+}
