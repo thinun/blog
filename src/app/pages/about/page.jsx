@@ -1,6 +1,11 @@
 import Image from "next/image";
 import './about.css'
 
+export const metadata = {
+    title: "About Page",
+    description: "About Description",
+};
+
 const about = () => {
     return (
         <div className={'about-container flex flex-row items-center justify-center'}>

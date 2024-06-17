@@ -1,5 +1,16 @@
 import Image from "next/image";
 import './post.css'
+import {getPost, getPosts} from "@/db/data";
+
+
+export const generateMetaData = async ({params}) => {
+    const {slug} = params
+    const post = await getPost(slug)
+    return {
+        title: post.title,
+        description: post.description,
+    }
+};
 
 
 const singlePost = () => {
