@@ -1,0 +1,21 @@
+.post-container {
+    height: 85vh;
+    width: 100%;
+}
+
+.author-image{
+    border-radius: 50%;
+}
+
+.author-name{
+    color: var(--textSoft);
+    font-size: 0.8em;
+}
+
+.date{
+    color: var(--textSoft);
+    font-size: 0.8em;
+}
+.post-title{
+    font-size: 2em;
+}

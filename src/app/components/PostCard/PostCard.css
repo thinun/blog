@@ -1,0 +1,26 @@
+.post-card-container{
+    width: 25vw;
+    cursor: default;
+    margin-top: 20px;
+}
+
+.post-card-date{
+    transform: rotate(90deg);
+}
+.post-card-right{
+    width: 10%;
+}
+
+.post-card-description{
+    font-size: 12px;
+    color: var(--textSoft);
+}
+
+.post-card-link:hover{
+    color: var(--btn);
+}
+
+.post-card-image{
+    display: block;
+    border-radius: 6px;
+}
