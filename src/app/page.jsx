@@ -30,7 +30,7 @@ export default function Home() {
                 </div>
             </div>
             <div className={'hero-right flex items-center flex-col'}>
-                <Image src={'/hero.gif'} alt={'Hero'} width={500} height={400} className={'block items-center'}/>
+                <Image src={'/travalanime.gif'} alt={'Hero'} width={500} height={400} className={'block items-center'}/>
             </div>
         </div>
     </>
